@@ -58,6 +58,8 @@ dependencies {
     // Network
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.okhttp3:okhttp:$okHttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp"
 
     // Third-Party
     implementation "com.github.bumptech.glide:glide:$glide"
