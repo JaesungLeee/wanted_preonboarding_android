@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_top_news">
+
+    <fragment
+        android:id="@+id/navigation_saved"
+        android:name="jaesung.project.wanted_preonboarding_android.ui.save.SaveNewsFragment"
+        android:label="SaveNewsFragment"
+        tools:layout="@layout/fragment_save_news" >
+        <action
+            android:id="@+id/action_saved_to_news_detail"
+            app:destination="@id/navigation_news_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_top_news"
+        android:name="jaesung.project.wanted_preonboarding_android.ui.news.NewsFragment"
+        android:label="NewsFragment"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_top_news_to_news_detail"
+            app:destination="@id/navigation_news_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_news_detail"
+        android:name="jaesung.project.wanted_preonboarding_android.ui.newsdetail.NewsDetailFragment"
+        android:label="NewsDetailFragment"
+        tools:layout="@layout/fragment_news_detail" />
+    <fragment
+        android:id="@+id/navigation_category_news"
+        android:name="jaesung.project.wanted_preonboarding_android.ui.category.CategoryNewsFragment"
+        android:label="NewsCategoryFragment"
+        tools:layout="@layout/fragment_category_news" >
+        <action
+            android:id="@+id/action_category_news_to_news_detail"
+            app:destination="@id/navigation_news_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_category_group"
+        android:name="jaesung.project.wanted_preonboarding_android.ui.category.CategoryGroupFragment"
+        android:label="CategoryGroupFragment"
+        tools:layout="@layout/fragment_category_group">
+        <action
+            android:id="@+id/action_category_group_to_category_news"
+            app:destination="@id/navigation_category_news" />
+    </fragment>
+</navigation>
