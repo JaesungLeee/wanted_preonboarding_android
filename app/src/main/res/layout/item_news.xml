@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="article"
+            type="jaesung.project.wanted_preonboarding_android.data.model.Article" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,6 +38,7 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/iv_news"
+                    loadImage="@{article.newsThumbnailImage}"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
@@ -55,6 +60,7 @@
                     android:layout_marginEnd="10dp"
                     android:ellipsize="end"
                     android:maxLines="2"
+                    android:text="@{article.newsDescription}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_news"
@@ -68,6 +74,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="10dp"
+                    android:text="@{article.newsAuthor}"
                     app:layout_constraintEnd_toStartOf="@id/tv_news_time"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_content"
@@ -76,6 +83,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_news_time"
                     style="@style/TextSubtitle3.Blue"
+                    publishDate="@{article.publishDate}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
