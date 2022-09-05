@@ -5,6 +5,20 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
 }
 
+ext {
+    core = '1.8.0'
+    appCompat = '1.5.0'
+    constraintLayout = '2.1.4'
+    material = '1.6.1'
+    navigation = '2.5.1'
+    retrofit = '2.9.0'
+    coroutine = '1.6.4'
+    lifecycle = '2.4.1'
+    room = '2.4.3'
+    glide = '4.12.0'
+    timber = '5.0.1'
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
