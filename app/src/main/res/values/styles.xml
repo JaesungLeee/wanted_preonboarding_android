@@ -17,12 +17,24 @@
         <item name="android:textSize">16dp</item>
     </style>
 
+    <style name="TextSubtitle1.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="TextSubtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textSize">14dp</item>
     </style>
 
+    <style name="TextSubtitle2.Grey" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
     <style name="TextSubtitle3">
         <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="TextSubtitle3.Blue">
+        <item name="android:textColor">@color/blue</item>
     </style>
 
     <style name="TextCaption">
