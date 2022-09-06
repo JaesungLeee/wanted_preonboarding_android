@@ -9,7 +9,7 @@ import jaesung.project.wanted_preonboarding_android.databinding.ItemCategoryGrou
 import jaesung.project.wanted_preonboarding_android.ui.common.ItemDiffCallback
 import timber.log.Timber
 
-class CategoryAdapter : ListAdapter<NewsCategory, CategoryAdapter.CategoryViewHolder>(
+class CategoryAdapter(private val categoryClickListener: (String) -> Unit) : ListAdapter<NewsCategory, CategoryAdapter.CategoryViewHolder>(
     ItemDiffCallback<NewsCategory>(
         onItemSame = { old, new -> old.category == new.category },
         onContentSame = { old, new -> old == new }
@@ -23,13 +23,18 @@ class CategoryAdapter : ListAdapter<NewsCategory, CategoryAdapter.CategoryViewHo
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.bindItems(getItem(position))
+        holder.bindItems(getItem(position), categoryClickListener)
     }
 
     class CategoryViewHolder(private val binding: ItemCategoryGroupBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bindItems(newsCategory: NewsCategory) {
+        fun bindItems(newsCategory: NewsCategory, categoryClickListener: (String) -> Unit) {
             Timber.e("$newsCategory")
             binding.newsCategory = newsCategory
+
+            binding.clCategory.setOnClickListener {
+                categoryClickListener.invoke(newsCategory.category)
+            }
+
             binding.executePendingBindings()
         }
 
