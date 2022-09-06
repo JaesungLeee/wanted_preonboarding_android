@@ -21,12 +21,20 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="TextSubtitle1.Black.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextSubtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textSize">14dp</item>
     </style>
 
     <style name="TextSubtitle2.Grey" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextSubtitle2.Black">
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="TextSubtitle3">
@@ -50,5 +58,9 @@
     <style name="CollapsingToolbar.Collapsed.Title" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="ImageCircle" >
+        <item name="cornerSize">50%</item>
     </style>
 </resources>

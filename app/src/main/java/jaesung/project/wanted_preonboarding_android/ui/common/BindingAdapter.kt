@@ -4,6 +4,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.google.android.material.imageview.ShapeableImageView
 import jaesung.project.wanted_preonboarding_android.ui.common.DateTimeUtil.calculateTime
 import jaesung.project.wanted_preonboarding_android.ui.common.DateTimeUtil.dateTimeToMilliSec
 
@@ -23,5 +24,11 @@ object BindingAdapter {
     @BindingAdapter("publishDate")
     fun setPublishDate(view: AppCompatTextView, publishedDateTime: String) {
         view.text = calculateTime(dateTimeToMilliSec(publishedDateTime))
+    }
+
+    @JvmStatic
+    @BindingAdapter("imageResource")
+    fun setImageResource(view: ShapeableImageView, resId: Int) {
+        view.setImageResource(resId)
     }
 }
