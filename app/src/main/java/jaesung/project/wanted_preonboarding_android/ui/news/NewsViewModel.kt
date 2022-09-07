@@ -34,7 +34,7 @@ class NewsViewModel(private val repository: NewsRepository) : ViewModel() {
                         _newsList.value = response.articles!!
                     }
                     "error" -> {
-                        _error.value = Event(response.status)
+                        _error.value = Event(response.message!!)
                     }
                 }
                 Timber.d("Success: $response")

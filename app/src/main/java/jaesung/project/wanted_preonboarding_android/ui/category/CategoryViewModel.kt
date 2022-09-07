@@ -7,5 +7,4 @@ class CategoryViewModel(private val repository: CategoryRepository) : ViewModel(
 
     fun loadCategory() = repository.loadCategory()
 
-
 }

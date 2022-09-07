@@ -15,7 +15,7 @@
         android:id="@+id/cv_category_news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="2dp">
 
@@ -25,10 +25,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_thumbnail_image"
+                loadImage="@{news.newsThumbnailImage}"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_news"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

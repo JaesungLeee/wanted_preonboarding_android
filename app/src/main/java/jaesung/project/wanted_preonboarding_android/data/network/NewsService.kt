@@ -11,4 +11,10 @@ interface NewsService {
     suspend fun getBBCTopHeadlineNews(
         @Query("sources") source: String
     ): ResponseWrapper<List<Article>>
+
+    @GET("top-headlines")
+    suspend fun getCategoryHeadlineNews(
+        @Query("country") country: String = "us",
+        @Query("category") category: String
+    ): ResponseWrapper<List<Article>>
 }
