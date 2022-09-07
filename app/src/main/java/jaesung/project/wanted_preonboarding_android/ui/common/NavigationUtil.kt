@@ -13,8 +13,16 @@ object NavigationUtil {
         Navigation.findNavController(this).navigate(action)
     }
 
+    fun View.navigateWithArgs(navDirection: NavDirections) {
+        Navigation.findNavController(this).navigate(navDirection)
+    }
+
     fun Fragment.navigateWithBundle(action: Int, bundle: Bundle) {
         findNavController().navigate(action, bundle)
+    }
+
+    fun Fragment.navigateWithArgs(navDirections: NavDirections) {
+        this.findNavController().navigate(navDirections)
     }
 
     fun Fragment.navigate(action: Int) {
