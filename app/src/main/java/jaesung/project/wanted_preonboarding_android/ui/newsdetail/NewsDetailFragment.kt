@@ -9,6 +9,8 @@ import jaesung.project.wanted_preonboarding_android.R
 import jaesung.project.wanted_preonboarding_android.data.model.Article
 import jaesung.project.wanted_preonboarding_android.databinding.FragmentNewsDetailBinding
 import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateUp
+import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateWithArgs
+import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateWithBundle
 import jaesung.project.wanted_preonboarding_android.ui.common.base.BaseFragment
 
 class NewsDetailFragment : BaseFragment<FragmentNewsDetailBinding>(R.layout.fragment_news_detail) {
@@ -36,6 +38,10 @@ class NewsDetailFragment : BaseFragment<FragmentNewsDetailBinding>(R.layout.frag
         binding.article = article
         binding.tbNewsDetail.setNavigationOnClickListener {
             navigateUp()
+        }
+
+        binding.btnUrl.setOnClickListener {
+            navigateWithArgs(NewsDetailFragmentDirections.actionNewsDetailToOriginNews(article.newsUrl!!))
         }
     }
 }

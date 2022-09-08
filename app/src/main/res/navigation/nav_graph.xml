@@ -9,7 +9,7 @@
         android:id="@+id/navigation_saved"
         android:name="jaesung.project.wanted_preonboarding_android.ui.save.SaveNewsFragment"
         android:label="SaveNewsFragment"
-        tools:layout="@layout/fragment_save_news" >
+        tools:layout="@layout/fragment_save_news">
         <action
             android:id="@+id/action_saved_to_news_detail"
             app:destination="@id/navigation_news_detail" />
@@ -18,7 +18,7 @@
         android:id="@+id/navigation_top_news"
         android:name="jaesung.project.wanted_preonboarding_android.ui.news.NewsFragment"
         android:label="NewsFragment"
-        tools:layout="@layout/fragment_news" >
+        tools:layout="@layout/fragment_news">
         <action
             android:id="@+id/action_top_news_to_news_detail"
             app:destination="@id/navigation_news_detail" />
@@ -27,16 +27,19 @@
         android:id="@+id/navigation_news_detail"
         android:name="jaesung.project.wanted_preonboarding_android.ui.newsdetail.NewsDetailFragment"
         android:label="NewsDetailFragment"
-        tools:layout="@layout/fragment_news_detail" >
+        tools:layout="@layout/fragment_news_detail">
         <argument
             android:name="article"
             app:argType="jaesung.project.wanted_preonboarding_android.data.model.Article" />
+        <action
+            android:id="@+id/action_news_detail_to_origin_news"
+            app:destination="@id/navigation_origin_news" />
     </fragment>
     <fragment
         android:id="@+id/navigation_category_news"
         android:name="jaesung.project.wanted_preonboarding_android.ui.category.CategoryNewsFragment"
         android:label="NewsCategoryFragment"
-        tools:layout="@layout/fragment_category_news" >
+        tools:layout="@layout/fragment_category_news">
         <action
             android:id="@+id/action_category_news_to_news_detail"
             app:destination="@id/navigation_news_detail" />
@@ -49,5 +52,15 @@
         <action
             android:id="@+id/action_category_group_to_category_news"
             app:destination="@id/navigation_category_news" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_origin_news"
+        android:name="jaesung.project.wanted_preonboarding_android.ui.newsdetail.OriginNewsFragment"
+        android:label="OriginNewsFragment"
+        tools:layout="@layout/fragment_origin_news">
+        <argument
+            android:name="newsUrl"
+            android:defaultValue=""
+            app:argType="string" />
     </fragment>
 </navigation>
