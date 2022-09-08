@@ -11,19 +11,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import jaesung.project.wanted_preonboarding_android.R
 import jaesung.project.wanted_preonboarding_android.databinding.FragmentCategoryNewsBinding
 import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateUp
 import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateWithArgs
 import jaesung.project.wanted_preonboarding_android.ui.common.ViewModelFactory
+import jaesung.project.wanted_preonboarding_android.ui.common.base.BaseFragment
 import jaesung.project.wanted_preonboarding_android.util.Constants.CATEGORY_KEY
 import jaesung.project.wanted_preonboarding_android.util.EventObserver
 
-class CategoryNewsFragment : Fragment() {
-    private lateinit var binding: FragmentCategoryNewsBinding
+class CategoryNewsFragment :
+    BaseFragment<FragmentCategoryNewsBinding>(R.layout.fragment_category_news) {
 
     private lateinit var category: String
     private val viewModel: CategoryNewsViewModel by viewModels { ViewModelFactory(requireContext()) }
@@ -33,23 +32,20 @@ class CategoryNewsFragment : Fragment() {
         }
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_category_news, container, false)
-
+    ): View? {
         category = arguments?.getString(CATEGORY_KEY) ?: ""
         viewModel.category = category
-        return binding.root
+
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.lifecycleOwner = viewLifecycleOwner
 
         viewModel.loadCategoryHeadlines()
         setToolbar()
