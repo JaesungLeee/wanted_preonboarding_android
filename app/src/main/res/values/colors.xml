@@ -11,5 +11,7 @@
     <color name="blue">#195A95</color>
     <color name="yellow">#FFCE31</color>
     <color name="grey">#AFAFAF</color>
+    <color name="grey02">#F5F5F5</color>
+    <color name="grey02_alpha50">#80F5F5F5</color>
     <color name="blue_grey">#e2e2e6</color>
 </resources>

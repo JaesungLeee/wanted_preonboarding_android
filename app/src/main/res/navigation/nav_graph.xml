@@ -27,7 +27,11 @@
         android:id="@+id/navigation_news_detail"
         android:name="jaesung.project.wanted_preonboarding_android.ui.newsdetail.NewsDetailFragment"
         android:label="NewsDetailFragment"
-        tools:layout="@layout/fragment_news_detail" />
+        tools:layout="@layout/fragment_news_detail" >
+        <argument
+            android:name="article"
+            app:argType="jaesung.project.wanted_preonboarding_android.data.model.Article" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_category_news"
         android:name="jaesung.project.wanted_preonboarding_android.ui.category.CategoryNewsFragment"
@@ -35,11 +39,7 @@
         tools:layout="@layout/fragment_category_news" >
         <action
             android:id="@+id/action_category_news_to_news_detail"
-            app:destination="@id/navigation_news_detail" >
-            <argument
-                android:name="article"
-                app:argType="jaesung.project.wanted_preonboarding_android.data.model.Article" />
-        </action>
+            app:destination="@id/navigation_news_detail" />
     </fragment>
     <fragment
         android:id="@+id/navigation_category_group"

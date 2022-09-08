@@ -17,6 +17,7 @@ import androidx.fragment.app.viewModels
 import jaesung.project.wanted_preonboarding_android.R
 import jaesung.project.wanted_preonboarding_android.databinding.FragmentCategoryNewsBinding
 import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateUp
+import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateWithArgs
 import jaesung.project.wanted_preonboarding_android.ui.common.ViewModelFactory
 import jaesung.project.wanted_preonboarding_android.util.Constants.CATEGORY_KEY
 import jaesung.project.wanted_preonboarding_android.util.EventObserver
@@ -26,14 +27,19 @@ class CategoryNewsFragment : Fragment() {
 
     private lateinit var category: String
     private val viewModel: CategoryNewsViewModel by viewModels { ViewModelFactory(requireContext()) }
-    private lateinit var categoryNewsAdapter: CategoryNewsAdapter
+    private val categoryNewsAdapter: CategoryNewsAdapter by lazy {
+        CategoryNewsAdapter { article ->
+            navigateWithArgs(CategoryNewsFragmentDirections.actionCategoryNewsToNewsDetail(article))
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_category_news, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_category_news, container, false)
 
         category = arguments?.getString(CATEGORY_KEY) ?: ""
         viewModel.category = category
@@ -47,7 +53,6 @@ class CategoryNewsFragment : Fragment() {
 
         viewModel.loadCategoryHeadlines()
         setToolbar()
-        initAdapter()
         observe()
     }
 
@@ -85,10 +90,6 @@ class CategoryNewsFragment : Fragment() {
         ssb.setSpan(colorSpan, categoryStart, categoryEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         binding.tvCategoryNewsDescription.text = ssb
-    }
-
-    private fun initAdapter() {
-        categoryNewsAdapter = CategoryNewsAdapter()
     }
 
     private fun setToolbar() {

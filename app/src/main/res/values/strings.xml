@@ -3,4 +3,7 @@
     <string name="top_news">Top News</string>
     <string name="news_categories">Categories</string>
     <string name="saved_news">Saved</string>
+    <string name="content_title">Content</string>
+    <string name="description_title">Description</string>
+    <string name="show_origin_article">Show Origin Article</string>
 </resources>
