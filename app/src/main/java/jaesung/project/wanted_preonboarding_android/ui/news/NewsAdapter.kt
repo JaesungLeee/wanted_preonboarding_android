@@ -8,7 +8,7 @@ import jaesung.project.wanted_preonboarding_android.data.model.Article
 import jaesung.project.wanted_preonboarding_android.databinding.ItemNewsBinding
 import jaesung.project.wanted_preonboarding_android.ui.common.ItemDiffCallback
 
-class NewsAdapter() : ListAdapter<Article, NewsAdapter.NewsViewHolder>(ItemDiffCallback<Article>(
+class NewsAdapter(private val newsClickListener: (Article) -> Unit) : ListAdapter<Article, NewsAdapter.NewsViewHolder>(ItemDiffCallback<Article>(
     onItemSame = { old, new -> old.newsTitle == new.newsTitle },
     onContentSame = { old, new -> old == new }
 )) {
@@ -20,13 +20,17 @@ class NewsAdapter() : ListAdapter<Article, NewsAdapter.NewsViewHolder>(ItemDiffC
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        holder.bindItems(getItem(position))
+        holder.bindItems(getItem(position), newsClickListener)
     }
 
     class NewsViewHolder(private val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bindItems(article: Article) {
+        fun bindItems(article: Article, newsClickListener: (Article) -> Unit) {
             binding.article = article
+
+            binding.clContainer.setOnClickListener {
+                newsClickListener.invoke(article)
+            }
             binding.executePendingBindings()
         }
     }

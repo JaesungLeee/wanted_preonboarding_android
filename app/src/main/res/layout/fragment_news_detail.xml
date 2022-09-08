@@ -38,6 +38,7 @@
                     tools:src="@drawable/img_news" />
 
                 <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/tb_news_detail"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
@@ -185,7 +186,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:background="@color/white">
 
             <View
                 android:layout_width="match_parent"

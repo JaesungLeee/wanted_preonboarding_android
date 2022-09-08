@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import jaesung.project.wanted_preonboarding_android.R
 import jaesung.project.wanted_preonboarding_android.data.model.Article
 import jaesung.project.wanted_preonboarding_android.databinding.FragmentNewsDetailBinding
+import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateUp
 
 class NewsDetailFragment : Fragment() {
     private lateinit var binding: FragmentNewsDetailBinding
@@ -31,7 +32,14 @@ class NewsDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = viewLifecycleOwner
+        bindViews()
 
+    }
+
+    private fun bindViews() {
         binding.article = article
+        binding.tbNewsDetail.setNavigationOnClickListener {
+            navigateUp()
+        }
     }
 }

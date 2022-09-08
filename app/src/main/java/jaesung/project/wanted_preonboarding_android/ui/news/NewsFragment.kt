@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import jaesung.project.wanted_preonboarding_android.R
 import jaesung.project.wanted_preonboarding_android.databinding.FragmentNewsBinding
+import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateWithArgs
 import jaesung.project.wanted_preonboarding_android.ui.common.ViewModelFactory
 import jaesung.project.wanted_preonboarding_android.util.EventObserver
 
@@ -19,6 +20,11 @@ class NewsFragment : Fragment() {
     private val binding get() = requireNotNull(_binding)
 
     private val viewModel: NewsViewModel by viewModels { ViewModelFactory(requireContext()) }
+    private val adapter: NewsAdapter by lazy {
+        NewsAdapter { article ->
+            navigateWithArgs(NewsFragmentDirections.actionTopNewsToNewsDetail(article))
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,22 +39,22 @@ class NewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = viewLifecycleOwner
-        observeMessage()
+        observe()
         setRecyclerView()
     }
 
-    private fun observeMessage() {
+    private fun observe() {
         viewModel.error.observe(viewLifecycleOwner, EventObserver {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         })
+
+        viewModel.newsList.observe(viewLifecycleOwner) { news ->
+            adapter.submitList(news)
+        }
     }
 
     private fun setRecyclerView() {
-        binding.rvNews.adapter = NewsAdapter().apply {
-            viewModel.newsList.observe(viewLifecycleOwner) { news ->
-                submitList(news)
-            }
-        }
+        binding.rvNews.adapter = adapter
     }
 
     override fun onDestroyView() {
