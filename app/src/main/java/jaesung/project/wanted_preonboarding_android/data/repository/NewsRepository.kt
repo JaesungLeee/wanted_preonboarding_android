@@ -5,7 +5,7 @@ import jaesung.project.wanted_preonboarding_android.data.model.Article
 import jaesung.project.wanted_preonboarding_android.util.ResponseWrapper
 
 class NewsRepository(private val dataSource: NewsRemoteDataSourceImpl) {
-    suspend fun getBBCTopHeadlineNews(source: String): ResponseWrapper<List<Article>> {
-        return dataSource.getBBCTopHeadlineNews(source)
+    suspend fun getHeadlineNews(category: String?): ResponseWrapper<List<Article>> {
+        return dataSource.getTopHeadlineNews(category)
     }
 }

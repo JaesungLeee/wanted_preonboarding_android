@@ -8,13 +8,8 @@ import retrofit2.http.Query
 interface NewsService {
 
     @GET("top-headlines")
-    suspend fun getBBCTopHeadlineNews(
-        @Query("sources") source: String
-    ): ResponseWrapper<List<Article>>
-
-    @GET("top-headlines")
-    suspend fun getCategoryHeadlineNews(
+    suspend fun getHeadlineNews(
         @Query("country") country: String = "us",
-        @Query("category") category: String
+        @Query("category") category: String? = null
     ): ResponseWrapper<List<Article>>
 }

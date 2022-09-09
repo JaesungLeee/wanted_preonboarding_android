@@ -23,6 +23,7 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>(R.layout.fragment_news) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.loadBBCNews()
         observe()
         setRecyclerView()
     }

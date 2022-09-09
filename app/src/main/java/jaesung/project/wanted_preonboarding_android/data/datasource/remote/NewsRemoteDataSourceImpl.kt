@@ -6,7 +6,7 @@ import jaesung.project.wanted_preonboarding_android.data.network.NewsService
 import jaesung.project.wanted_preonboarding_android.util.ResponseWrapper
 
 class NewsRemoteDataSourceImpl(private val apiService: NewsService) : NewsDataSource {
-    override suspend fun getBBCTopHeadlineNews(source: String): ResponseWrapper<List<Article>> {
-        return apiService.getBBCTopHeadlineNews(source)
+    override suspend fun getTopHeadlineNews(category: String?): ResponseWrapper<List<Article>> {
+        return apiService.getHeadlineNews(category = category)
     }
 }

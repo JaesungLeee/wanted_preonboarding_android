@@ -11,23 +11,18 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class NewsViewModel(private val repository: NewsRepository) : ViewModel() {
-
-    private val source = "bbc-news"
-
     private val _error = MutableLiveData<Event<String>>()
     val error: LiveData<Event<String>> = _error
 
     private val _newsList = MutableLiveData<List<Article>>()
     val newsList: LiveData<List<Article>> = _newsList
 
-    init {
-        loadBBCNews()
-    }
 
-    private fun loadBBCNews() {
+
+    fun loadBBCNews() {
         viewModelScope.launch {
             try {
-                val response = repository.getBBCTopHeadlineNews(source)
+                val response = repository.getHeadlineNews(null)
 
                 when (response.status) {
                     "ok" -> {

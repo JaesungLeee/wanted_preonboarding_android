@@ -7,6 +7,6 @@ import jaesung.project.wanted_preonboarding_android.util.ResponseWrapper
 
 class CategoryNewsRemoteDataSourceImpl(private val apiService: NewsService) : CategoryNewsDataSource {
     override suspend fun loadCategoryNews(category: String): ResponseWrapper<List<Article>> {
-        return apiService.getCategoryHeadlineNews(category = category)
+        return apiService.getHeadlineNews(category = category)
     }
 }
