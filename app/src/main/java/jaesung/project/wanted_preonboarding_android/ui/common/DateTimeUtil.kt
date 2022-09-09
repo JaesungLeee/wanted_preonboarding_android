@@ -11,7 +11,7 @@ object DateTimeUtil {
     @SuppressLint("SimpleDateFormat")
     fun dateTimeToMilliSec(dateTime: String): Long {
         var timeInMilliSeconds: Long = 0
-        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")  // yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
 
         try {
             val date = simpleDateFormat.parse(dateTime)
@@ -26,7 +26,8 @@ object DateTimeUtil {
     }
 
     fun calculateTime(publishedDateTime: Long): String {
-        val currentDateTime = Calendar.getInstance().timeInMillis
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
+        val currentDateTime = Calendar.getInstance(TimeZone.getTimeZone("UTC")).timeInMillis
 
         val difference = currentDateTime - publishedDateTime
         Timber.e("$difference")
