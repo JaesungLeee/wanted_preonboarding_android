@@ -34,4 +34,12 @@ object BindingAdapter {
     fun setImageResource(view: ShapeableImageView, resId: Int) {
         view.setImageResource(resId)
     }
+
+    @JvmStatic
+    @BindingAdapter("htmlTag")
+    fun setHtmlTag(view: AppCompatTextView, source: String?) {
+        if (!source.isNullOrEmpty()) {
+            view.text = Html.fromHtml(source, Html.FROM_HTML_MODE_COMPACT)
+        }
+    }
 }
