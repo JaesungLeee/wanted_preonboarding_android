@@ -24,6 +24,7 @@ ext {
     coroutine = '1.6.4'
     lifecycle = '2.4.1'
     room = '2.4.3'
+    paging = '3.1.1'
     glide = '4.12.0'
     timber = '5.0.1'
     okHttp = '4.9.3'
