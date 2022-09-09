@@ -1,10 +1,12 @@
 package jaesung.project.wanted_preonboarding_android.ui.common
 
+import android.text.Html
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
+import jaesung.project.wanted_preonboarding_android.R
 import jaesung.project.wanted_preonboarding_android.ui.common.DateTimeUtil.calculateTime
 import jaesung.project.wanted_preonboarding_android.ui.common.DateTimeUtil.dateTimeToMilliSec
 
@@ -16,6 +18,7 @@ object BindingAdapter {
         if (!imageUrl.isNullOrEmpty()) {
             Glide.with(view)
                 .load(imageUrl)
+                .error(R.drawable.img_not_found)
                 .into(view)
         }
     }
