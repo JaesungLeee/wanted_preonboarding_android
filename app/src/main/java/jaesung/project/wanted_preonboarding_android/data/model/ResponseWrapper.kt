@@ -1,4 +1,4 @@
-package jaesung.project.wanted_preonboarding_android.util
+package jaesung.project.wanted_preonboarding_android.data.model
 
 import com.google.gson.annotations.SerializedName
 

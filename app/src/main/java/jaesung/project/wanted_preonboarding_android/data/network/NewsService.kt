@@ -1,7 +1,7 @@
 package jaesung.project.wanted_preonboarding_android.data.network
 
 import jaesung.project.wanted_preonboarding_android.data.model.Article
-import jaesung.project.wanted_preonboarding_android.util.ResponseWrapper
+import jaesung.project.wanted_preonboarding_android.data.model.ResponseWrapper
 import retrofit2.http.GET
 import retrofit2.http.Query
 
