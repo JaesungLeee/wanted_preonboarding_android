@@ -1,8 +1,7 @@
 package jaesung.project.wanted_preonboarding_android.data.datasource.source
 
-import jaesung.project.wanted_preonboarding_android.data.model.Article
-import jaesung.project.wanted_preonboarding_android.data.model.ResponseWrapper
+import jaesung.project.wanted_preonboarding_android.data.model.NewsResponse
 
 interface NewsDataSource {
-    suspend fun getTopHeadlineNews(category: String?): ResponseWrapper<List<Article>>
+    suspend fun getHeadlineNews(category: String?): NewsResponse
 }

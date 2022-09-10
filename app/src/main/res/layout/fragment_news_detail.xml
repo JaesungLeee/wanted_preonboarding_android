@@ -8,8 +8,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="article"
-            type="jaesung.project.wanted_preonboarding_android.data.model.Article" />
+            name="news"
+            type="jaesung.project.wanted_preonboarding_android.domain.model.News" />
 
     </data>
 
@@ -30,7 +30,7 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv_thumbnail_image"
-                    loadImage="@{article.newsThumbnailImage}"
+                    loadImage="@{news.imageUrl}"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
@@ -73,7 +73,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_published_date"
                         style="@style/TextSubtitle3.Black"
-                        publishDate="@{article.publishDate}"
+                        android:text="@{news.publishedDate}"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
@@ -92,7 +92,7 @@
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="24dp"
-                        android:text="@{article.newsTitle}"
+                        android:text="@{news.title}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_published_date"
@@ -107,8 +107,8 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="24dp"
                         android:layout_marginBottom="16dp"
-                        android:text="@{article.newsAuthor}"
-                        android:visibility="@{article.newsAuthor == null ? View.GONE : View.VISIBLE}"
+                        android:text="@{news.author}"
+                        android:visibility="@{news.author == null ? View.GONE : View.VISIBLE}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +124,7 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
                     android:text="@string/description_title"
-                    android:visibility="@{article.newsDescription == null ? View.GONE : View.VISIBLE}"
+                    android:visibility="@{news.description == null ? View.GONE : View.VISIBLE}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cl_header" />
 
@@ -136,8 +136,8 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
-                    android:text="@{article.newsDescription}"
-                    android:visibility="@{article.newsDescription == null ? View.GONE : View.VISIBLE}"
+                    android:text="@{news.description}"
+                    android:visibility="@{news.description == null ? View.GONE : View.VISIBLE}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_description_title"
@@ -151,7 +151,7 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
                     android:text="@string/content_title"
-                    android:visibility="@{article.newsContent == null ? View.GONE : View.VISIBLE}"
+                    android:visibility="@{news.content == null ? View.GONE : View.VISIBLE}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
@@ -164,8 +164,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
                     android:layout_marginBottom="32dp"
-                    android:text="@{article.newsContent}"
-                    android:visibility="@{article.newsContent == null ? View.GONE : View.VISIBLE}"
+                    android:text="@{news.content}"
+                    android:visibility="@{news.content == null ? View.GONE : View.VISIBLE}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

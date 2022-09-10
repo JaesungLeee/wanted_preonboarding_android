@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import jaesung.project.wanted_preonboarding_android.data.model.Article
 import jaesung.project.wanted_preonboarding_android.databinding.ItemCategoryNewsBinding
+import jaesung.project.wanted_preonboarding_android.domain.model.News
 import jaesung.project.wanted_preonboarding_android.ui.common.ItemDiffCallback
 
-class CategoryNewsAdapter(private val newsClickListener: (Article) -> Unit): ListAdapter<Article, CategoryNewsAdapter.CategoryNewsViewHolder>(
-    ItemDiffCallback<Article>(
-        onItemSame = { old, new -> old.newsTitle == new.newsTitle },
+class CategoryNewsAdapter(private val newsClickListener: (News) -> Unit): ListAdapter<News, CategoryNewsAdapter.CategoryNewsViewHolder>(
+    ItemDiffCallback<News>(
+        onItemSame = { old, new -> old.title == new.title },
         onContentSame = { old, new -> old == new }
     )
 ) {
@@ -27,13 +28,13 @@ class CategoryNewsAdapter(private val newsClickListener: (Article) -> Unit): Lis
 
     class CategoryNewsViewHolder(private val binding: ItemCategoryNewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bindItems(article: Article, newsClickListener: (Article) -> Unit) {
+        fun bindItems(news: News, newsClickListener: (News) -> Unit) {
 
             binding.cvCategoryNews.setOnClickListener {
-                newsClickListener.invoke(article)
+                newsClickListener.invoke(news)
             }
 
-            binding.article = article
+            binding.news = news
             binding.executePendingBindings()
         }
     }

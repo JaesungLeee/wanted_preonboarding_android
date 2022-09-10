@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import jaesung.project.wanted_preonboarding_android.data.model.Article
 import jaesung.project.wanted_preonboarding_android.databinding.ItemNewsBinding
+import jaesung.project.wanted_preonboarding_android.domain.model.News
 import jaesung.project.wanted_preonboarding_android.ui.common.ItemDiffCallback
 
-class NewsAdapter(private val newsClickListener: (Article) -> Unit) : ListAdapter<Article, NewsAdapter.NewsViewHolder>(ItemDiffCallback<Article>(
-    onItemSame = { old, new -> old.newsTitle == new.newsTitle },
+class NewsAdapter(private val newsClickListener: (News) -> Unit) : ListAdapter<News, NewsAdapter.NewsViewHolder>(ItemDiffCallback<News>(
+    onItemSame = { old, new -> old.title == new.title },
     onContentSame = { old, new -> old == new }
 )) {
 
@@ -25,11 +26,11 @@ class NewsAdapter(private val newsClickListener: (Article) -> Unit) : ListAdapte
 
     class NewsViewHolder(private val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bindItems(article: Article, newsClickListener: (Article) -> Unit) {
-            binding.article = article
+        fun bindItems(news: News, newsClickListener: (News) -> Unit) {
+            binding.news = news
 
             binding.clContainer.setOnClickListener {
-                newsClickListener.invoke(article)
+                newsClickListener.invoke(news)
             }
             binding.executePendingBindings()
         }

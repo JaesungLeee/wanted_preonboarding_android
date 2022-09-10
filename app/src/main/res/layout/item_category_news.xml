@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="article"
-            type="jaesung.project.wanted_preonboarding_android.data.model.Article" />
+            name="news"
+            type="jaesung.project.wanted_preonboarding_android.domain.model.News" />
 
     </data>
 
@@ -25,7 +25,7 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_thumbnail_image"
-                loadImage="@{article.newsThumbnailImage}"
+                loadImage="@{news.imageUrl}"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="4dp"
-                android:text="@{article.newsAuthor}"
+                android:text="@{news.author}"
                 app:layout_constraintBottom_toTopOf="@id/tv_title"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="by Ryan Browe" />
@@ -64,7 +64,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="40dp"
                 android:gravity="start"
-                android:text="@{article.newsTitle}"
+                android:text="@{news.title}"
                 app:layout_constraintBottom_toTopOf="@id/tv_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
                 android:layout_marginBottom="16dp"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="@{article.newsDescription}"
+                android:text="@{news.description}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

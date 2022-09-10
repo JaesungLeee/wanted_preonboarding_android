@@ -29,8 +29,8 @@
         android:label="NewsDetailFragment"
         tools:layout="@layout/fragment_news_detail">
         <argument
-            android:name="article"
-            app:argType="jaesung.project.wanted_preonboarding_android.data.model.Article" />
+            android:name="news"
+            app:argType="jaesung.project.wanted_preonboarding_android.domain.model.News" />
         <action
             android:id="@+id/action_news_detail_to_origin_news"
             app:destination="@id/navigation_origin_news" />
@@ -43,6 +43,10 @@
         <action
             android:id="@+id/action_category_news_to_news_detail"
             app:destination="@id/navigation_news_detail" />
+        <argument
+            android:name="category"
+            android:defaultValue=""
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/navigation_category_group"
