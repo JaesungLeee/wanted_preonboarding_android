@@ -1,1 +1,48 @@
 # wanted_preonboarding_android
+
+## App Architecture
+<img src ="assets/architecture.png" width="400">
+
+<br>
+
+Android Developers에서 권장하는 앱 아키텍처 가이드를 따랐습니다.
+* 관심사 분리 원칙에 따라 View(Activity/Fragment)에서는 UI와 클릭 이벤트와 같은 상호작용에 대한 처리를 진행하고, 그 외 View에서 처리하지 않아도 되는 로직들은 분리하였습니다.
+
+<br>
+
+### UI Layer
+<img src ="assets/ui-layer.png" width="400">
+<img src ="assets/package-ui.png" width="300">
+
+UI Layer는 화면에 UI를 표시하는 역할과 사용자의 상호작용을 담당합니다. 
+
+<br>
+
+### Domain Layer
+<img src ="assets/domain-layer.png" width="400">
+<img src ="assets/package-domain.png" width="300">
+
+Domain Layer는 ViewModel에서 사용되는 앱 비지니스 로직의 캡슐화된 클래스가 포함됩니다.
+
+<br>
+
+### Data Layer
+<img src ="assets/data-layer.png" width="400">
+<img src ="assets/package-data.png" width="300">
+
+Data Layer는 네트워크 작업 또는 데이터베이스 작업과 같은 데이터와 관련한 앱의 비지니스 로직이 포함됩니다. 
+
+<br>
+
+## Library
+|Architecture|Android App Architecture + AAC-ViewModel|
+|---|---|
+|DI|Koin|
+|Network|OkHttp3, Retrofit2|
+|Asynchronous Processing|Coroutine, Flow|
+|Jetpack|Navigation, Room, Lifecycle, ViewModel, DataBinding|
+|Third-Party|Timber, Glide, Gson|
+
+<br>
+
+### Simulation
