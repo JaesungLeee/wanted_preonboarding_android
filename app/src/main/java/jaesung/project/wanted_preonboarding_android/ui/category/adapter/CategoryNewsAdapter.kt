@@ -1,10 +1,9 @@
-package jaesung.project.wanted_preonboarding_android.ui.category
+package jaesung.project.wanted_preonboarding_android.ui.category.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import jaesung.project.wanted_preonboarding_android.data.model.Article
 import jaesung.project.wanted_preonboarding_android.databinding.ItemCategoryNewsBinding
 import jaesung.project.wanted_preonboarding_android.domain.model.News
 import jaesung.project.wanted_preonboarding_android.ui.common.ItemDiffCallback

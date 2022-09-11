@@ -11,17 +11,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.navArgs
 import jaesung.project.wanted_preonboarding_android.R
 import jaesung.project.wanted_preonboarding_android.databinding.FragmentCategoryNewsBinding
+import jaesung.project.wanted_preonboarding_android.ui.category.adapter.CategoryNewsAdapter
 import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateUp
 import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateWithArgs
 import jaesung.project.wanted_preonboarding_android.ui.common.base.BaseFragment
 import jaesung.project.wanted_preonboarding_android.util.UiState
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

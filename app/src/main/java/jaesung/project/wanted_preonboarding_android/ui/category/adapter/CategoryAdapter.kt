@@ -1,4 +1,4 @@
-package jaesung.project.wanted_preonboarding_android.ui.category
+package jaesung.project.wanted_preonboarding_android.ui.category.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

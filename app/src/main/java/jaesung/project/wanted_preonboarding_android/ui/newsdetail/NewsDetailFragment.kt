@@ -41,9 +41,7 @@ class NewsDetailFragment : BaseFragment<FragmentNewsDetailBinding>(R.layout.frag
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindViews()
-
     }
-
 
     private fun bindViews() {
         binding.news = news
@@ -58,15 +56,8 @@ class NewsDetailFragment : BaseFragment<FragmentNewsDetailBinding>(R.layout.frag
         }
 
         binding.ivSave.setOnClickListener {
-            if (viewModel.isSaved.value == 1) {
-                Timber.e("Deleted")
-                Timber.e("${news.title}")
-                viewModel.deleteNews(news.title)
-            }
-            else {
-                Timber.e("clicked")
-                viewModel.saveNews(news)
-            }
+            if (viewModel.isSaved.value == 1) viewModel.deleteNews(news.title)
+            else viewModel.saveNews(news)
         }
     }
 }

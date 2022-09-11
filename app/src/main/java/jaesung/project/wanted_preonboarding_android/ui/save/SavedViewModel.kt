@@ -35,6 +35,4 @@ class SavedViewModel(private val getSavedNewsUseCase: GetSavedNewsUseCase) : Vie
                 }
         }
     }
-
-
 }

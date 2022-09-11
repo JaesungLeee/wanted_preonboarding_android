@@ -2,13 +2,11 @@ package jaesung.project.wanted_preonboarding_android.ui.category
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.os.bundleOf
 import jaesung.project.wanted_preonboarding_android.R
 import jaesung.project.wanted_preonboarding_android.databinding.FragmentCategoryGroupBinding
+import jaesung.project.wanted_preonboarding_android.ui.category.adapter.CategoryAdapter
 import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateWithArgs
-import jaesung.project.wanted_preonboarding_android.ui.common.NavigationUtil.navigateWithBundle
 import jaesung.project.wanted_preonboarding_android.ui.common.base.BaseFragment
-import jaesung.project.wanted_preonboarding_android.util.Constants.CATEGORY_KEY
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class CategoryGroupFragment :
