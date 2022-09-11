@@ -35,84 +35,27 @@ Data Layer는 네트워크 작업 또는 데이터베이스 작업과 같은 데
 ├── data
 │   ├── datasource
 │   │   ├── local
-│   │   │   ├── CategoryLocalDataSourceImpl.kt
-│   │   │   └── SavedNewsLocalDataSourceImpl.kt
 │   │   ├── remote
-│   │   │   └── NewsRemoteDataSourceImpl.kt
 │   │   └── source
-│   │       ├── CategoryDataSource.kt
-│   │       ├── NewsDataSource.kt
-│   │       └── SavedNewsDataSource.kt
 │   ├── db
-│   │   ├── NewsDao.kt
-│   │   └── NewsDatabase.kt
 │   ├── mapper
-│   │   └── NewsMapper.kt
 │   ├── model
-│   │   ├── Article.kt
-│   │   ├── NewsCategory.kt
-│   │   ├── NewsResponse.kt
-│   │   ├── SavedNews.kt
-│   │   └── Source.kt
 │   ├── network
-│   │   └── NewsService.kt
 │   └── repository
-│       ├── CategoryRepositoryImpl.kt
-│       ├── NewsRepositoryImpl.kt
-│       └── SavedNewsRepositoryImpl.kt
 ├── di
-│   ├── DBModule.kt
-│   ├── DataSourceModule.kt
-│   ├── NetworkModule.kt
-│   ├── RepositoryModule.kt
-│   ├── UseCaseModule.kt
-│   └── ViewModelModule.kt
 ├── domain
 │   ├── model
-│   │   └── News.kt
 │   ├── repository
-│   │   ├── CategoryRepository.kt
-│   │   ├── NewsRepository.kt
-│   │   └── SavedNewsRepository.kt
 │   └── usecase
-│       ├── DeleteHeadlineNewsUseCase.kt
-│       ├── GetHeadlineNewsUseCase.kt
-│       ├── GetNewsCategoryUseCase.kt
-│       ├── GetSavedNewsUseCase.kt
-│       └── SaveHeadlineNewsUseCase.kt
 ├── ui
-│   ├── MainActivity.kt
-│   ├── WantedApplication.kt
 │   ├── category
-│   │   ├── CategoryGroupFragment.kt
-│   │   ├── CategoryNewsFragment.kt
-│   │   ├── CategoryViewModel.kt
 │   │   └── adapter
-│   │       ├── CategoryAdapter.kt
-│   │       └── CategoryNewsAdapter.kt
 │   ├── common
-│   │   ├── BindingAdapter.kt
-│   │   ├── DateTimeUtil.kt
-│   │   ├── ItemDiffCallback.kt
-│   │   ├── NavigationUtil.kt
 │   │   └── base
-│   │       └── BaseFragment.kt
 │   ├── news
-│   │   ├── NewsAdapter.kt
-│   │   ├── NewsFragment.kt
-│   │   └── NewsViewModel.kt
 │   ├── newsdetail
-│   │   ├── NewsDetailFragment.kt
-│   │   └── OriginNewsFragment.kt
 │   └── save
-│       ├── SaveNewsFragment.kt
-│       ├── SavedNewsAdapter.kt
-│       └── SavedViewModel.kt
 └── util
-    ├── Constants.kt
-    ├── Event.kt
-    ├── EventObserver.kt
-    └── UiState.kt
 ```
 
 ## Library
