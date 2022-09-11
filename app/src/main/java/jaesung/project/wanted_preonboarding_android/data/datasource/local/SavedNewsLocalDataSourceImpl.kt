@@ -14,7 +14,7 @@ class SavedNewsLocalDataSourceImpl(private val dao: NewsDao) : SavedNewsDataSour
         return dao.insertNews(news)
     }
 
-    override suspend fun deleteNews(news: SavedNews) {
-        return dao.deleteNews(news)
+    override suspend fun deleteNews(title: String) {
+        return dao.deleteNews(title)
     }
 }

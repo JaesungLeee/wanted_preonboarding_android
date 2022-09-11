@@ -1,12 +1,13 @@
 package jaesung.project.wanted_preonboarding_android.domain.repository
 
 import jaesung.project.wanted_preonboarding_android.data.model.SavedNews
+import kotlinx.coroutines.flow.Flow
 
 interface SavedNewsRepository {
 
-    suspend fun getSavedNews(): List<SavedNews>
+    fun getSavedNews(): Flow<List<SavedNews>>
 
-    suspend fun deleteNews(news: SavedNews)
+    fun deleteNews(title: String): Flow<Boolean>
 
-    suspend fun insertNews(news: SavedNews)
+    fun insertNews(news: SavedNews): Flow<Boolean>
 }

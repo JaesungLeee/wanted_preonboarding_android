@@ -17,7 +17,7 @@ object NewsMapper {
                 imageUrl = article.newsThumbnailImage ?: "",
                 publishedDate = calculateTime(dateTimeToMilliSec(article.publishDate)),
                 content = article.newsContent ?: "",
-                isSaved = false
+                isSaved = 0
             )
         }
     }

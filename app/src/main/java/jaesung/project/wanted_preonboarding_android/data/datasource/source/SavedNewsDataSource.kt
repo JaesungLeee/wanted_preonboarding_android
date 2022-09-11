@@ -8,5 +8,5 @@ interface SavedNewsDataSource {
 
     suspend fun insertNews(news: SavedNews)
 
-    suspend fun deleteNews(news: SavedNews)
+    suspend fun deleteNews(title: String)
 }

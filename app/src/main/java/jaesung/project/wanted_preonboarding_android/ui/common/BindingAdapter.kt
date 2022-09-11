@@ -24,12 +24,6 @@ object BindingAdapter {
     }
 
     @JvmStatic
-    @BindingAdapter("publishDate")
-    fun setPublishDate(view: AppCompatTextView, publishedDateTime: String) {
-        view.text = calculateTime(dateTimeToMilliSec(publishedDateTime))
-    }
-
-    @JvmStatic
     @BindingAdapter("imageResource")
     fun setImageResource(view: ShapeableImageView, resId: Int) {
         view.setImageResource(resId)
@@ -41,5 +35,12 @@ object BindingAdapter {
         if (!source.isNullOrEmpty()) {
             view.text = Html.fromHtml(source, Html.FROM_HTML_MODE_COMPACT)
         }
+    }
+
+    @JvmStatic
+    @BindingAdapter("loadSaveImage")
+    fun setLoadSaveImage(view: AppCompatImageView, state: Boolean) {
+        if (state) view.setImageResource(R.drawable.ic_saved_48)
+        else view.setImageResource(R.drawable.ic_unsaved_48)
     }
 }

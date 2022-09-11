@@ -30,8 +30,8 @@ class CategoryNewsFragment :
 
     private val viewModel: CategoryViewModel by sharedViewModel()
     private val adapter: CategoryNewsAdapter by lazy {
-        CategoryNewsAdapter { article ->
-            navigateWithArgs(CategoryNewsFragmentDirections.actionCategoryNewsToNewsDetail(article))
+        CategoryNewsAdapter { news ->
+            navigateWithArgs(CategoryNewsFragmentDirections.actionCategoryNewsToNewsDetail(news))
         }
     }
 
@@ -104,7 +104,7 @@ class CategoryNewsFragment :
                 viewModel.headlineNews.collect { uiState ->
                     when (uiState) {
                         is UiState.Success -> {
-//                    setTextWithStyleSpan()
+//                            setTextWithStyleSpan()
                             adapter.submitList(uiState.data)
                         }
                         is UiState.Loading -> {}

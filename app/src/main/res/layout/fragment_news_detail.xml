@@ -8,6 +8,10 @@
         <import type="android.view.View" />
 
         <variable
+            name="viewModel"
+            type="jaesung.project.wanted_preonboarding_android.ui.news.NewsViewModel" />
+
+        <variable
             name="news"
             type="jaesung.project.wanted_preonboarding_android.domain.model.News" />
 
@@ -73,12 +77,12 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_published_date"
                         style="@style/TextSubtitle3.Black"
-                        android:text="@{news.publishedDate}"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="24dp"
+                        android:text="@{news.publishedDate}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -200,7 +204,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_margin="16dp"
-                android:src="@drawable/ic_saved_48"
+                android:src="@{viewModel.isSaved == 1 ? @drawable/ic_saved_48 : @drawable/ic_unsaved_48}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
